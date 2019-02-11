@@ -2,9 +2,9 @@
 var bCrypt = require('bcrypt-nodejs');
 
 
-module.exports = function (passport, user) {
+module.exports = function (passport, User) {
 
-    var User = user;
+    var user = User;
     var LocalStrategy = require('passport-local').Strategy;
 
     passport.use('local-signup', new LocalStrategy(
@@ -54,11 +54,13 @@ module.exports = function (passport, user) {
 
                         password: userPassword,
 
-                        firstname: req.body.firstname,
+                        firstName: req.body.firstName,
 
-                        lastname: req.body.lastname
+                        lastName: req.body.lastName
 
                     };
+
+                    //User.create() is a Sequelize method for adding new entries to the database. Notice that the values in the data object are gotten from the req.body object which contains the input from our signup form. 
 
                     User.create(data).then(function (newUser, created) {
 

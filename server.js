@@ -38,7 +38,7 @@ app.get('/', function (req, res) {
 
 });
 
-//Models
+//Importing Models
 var models = require("./models");
 
 //Routes
@@ -48,10 +48,10 @@ var authRoute = require('./routes/auth.js')(app, passport);
 
 //load passport strategies
 
-require('./config/passport/passport.js')(passport, models.user);
+require('./config/passport/passport.js')(passport, models.User);
 
 
-//Sync Database
+//Calling the Sequelize sync function.
 
 models.sequelize.sync().then(function () {
 
