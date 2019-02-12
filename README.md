@@ -6,4 +6,4 @@ However, if user email is already in database the signup page will refresh itsel
 
 User can go to http://localhost:8080/logout to log out.
 
-User can sign in at http://localhost:8080/signup and then go to http://localhost:8080/dashboard.
+User can sign in at http://localhost:8080/signin and then go to http://localhost:8080/dashboard.
